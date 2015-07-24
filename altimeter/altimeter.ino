@@ -144,7 +144,7 @@ void setup(void) {
   
   // Initialise BMP180
   if (pressure.begin()) {
-    // Goed voor elkaar
+    // GLet's have some Aphex acid...
   }    
   else {
     // while(1); // Error...
