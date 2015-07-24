@@ -180,14 +180,15 @@ void loop(void) {
         delay(status);
         status = pressure.getPressure(P,T);
         if (status != 0) {
-          a = pressure.altitude(P,(calPressure / 10000.0000));  // 'a' wordt berekend in functie adhv huidige druk vs. baseline druk, Sparkfun library
-                                                                // calPressure = baseline druk
-                                                                // calPressure (gemeten in millibars) wordt in setup geladen uit EEPROM / geset in loop als long 4 byte 
-                                                                // Om de long weer kloppend te maken deel je deze door 10000.0000 (calPressure = float)
-                                                                // Return uit functie (a) is verschil in meters tussen baseline (calPressure / 10000.0000) en gemeten druk (P)
-                                                                // Later in code, current altitude wordt verkregen door in EEPROM opgeslagen baseline hoogte (calAlititude) op te tellen bij return uit functie
-                                                                // VB. current altitude = a + calAltitude --> Zeg je baseline height = 2m (Soest) en resultaat uit functie, a = -20m
-                                                                //     current altitude = -20 + 2 = 18m
+          // 'a' wordt berekend in functie adhv huidige druk vs. baseline druk, Sparkfun library
+          // calPressure = baseline druk
+          // calPressure (gemeten in millibars) wordt in setup geladen uit EEPROM / geset in loop als long 4 byte 
+          // Om de long weer kloppend te maken deel je deze door 10000.0000 (calPressure = float)
+          // Return uit functie (a) is verschil in meters tussen baseline (calPressure / 10000.0000) en gemeten druk (P)
+          // Later in code, current altitude wordt verkregen door in EEPROM opgeslagen baseline hoogte (calAlititude) op te tellen bij return uit functie
+          // VB. current altitude = a + calAltitude --> Zeg je baseline height = 2m (Soest) en resultaat uit functie, a = -20m
+          //     current altitude = -20 + 2 = 18m
+          a = pressure.altitude(P,(calPressure / 10000.0000));
         }
       }
     }
