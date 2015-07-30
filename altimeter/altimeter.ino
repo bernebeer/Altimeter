@@ -130,7 +130,7 @@ void setup(void) {
   } 
   while( u8g.nextPage() );
   
-  // pinModes zetten, CS OLED, Arduino pin 5, naar OUTPUT zetten maakt niks uit v.w.b. prestatie...
+  // pinModes zetten, CS OLED, pin 5, naar OUTPUT zetten maakt niks uit v.w.b. prestatie...
   pinMode(btn1Pin, INPUT_PULLUP);
   pinMode(btn2Pin, INPUT_PULLUP);
   pinMode(btn3Pin, INPUT_PULLUP);
