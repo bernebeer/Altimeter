@@ -187,7 +187,7 @@ void loop(void) {
           // Return uit functie (a) is verschil in meters tussen baseline (calPressure / 10000.0000) en gemeten druk (P)
           // Later in code, current altitude wordt verkregen door in EEPROM opgeslagen baseline hoogte (calAlititude) op te tellen bij return uit functie
           // VB. current altitude = a + calAltitude --> Zeg je baseline height = 2m (Soest) en resultaat uit functie, a = -20m
-          //     current altitude = -20 + 2 = 18m
+          //     current altitude = -20 + 2 = -18m
           a = pressure.altitude(P,(calPressure / 10000.0000));
         }
       }
